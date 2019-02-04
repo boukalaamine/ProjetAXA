@@ -23,11 +23,14 @@ public class Garantie {
 	private int franchiseParVehiculeRoulant;
 	private int cotisationParVehicule;
 	private int cotisationParChiffreAffaire;
+	private String dateEffet;
+	private String  dateFin;
+	
 	public Garantie(String animauxVivants, String frigo, String vehiculesEtRemorques, String citerne,
 			String typeContrat, String activite, String flotte, String typeCotisation, String typeMarchandise,
 			String expositions, String nombreExpositions, String iAC, String hIAC, String garantieVol, int capital,
 			int nombreDeSinistres, int franchiseToutCas, int franchiseParVehiculeRoulant, int cotisationParVehicule,
-			int cotisationParChiffreAffaire) {
+			int cotisationParChiffreAffaire, String dateEffet) {
 		super();
 		this.animauxVivants = animauxVivants;
 		this.frigo = frigo;
@@ -49,7 +52,55 @@ public class Garantie {
 		this.franchiseParVehiculeRoulant = franchiseParVehiculeRoulant;
 		this.cotisationParVehicule = cotisationParVehicule;
 		this.cotisationParChiffreAffaire = cotisationParChiffreAffaire;
+		this.dateEffet = dateEffet;
 	}
+	
+	public String getDateEffet() {
+		return dateEffet;
+	}
+
+	public void setDateEffet(String dateEffet) {
+		this.dateEffet = dateEffet;
+	}
+
+	public String getDateFin() {
+		return dateFin;
+	}
+
+	public void setDateFin(String dateFin) {
+		this.dateFin = dateFin;
+	}
+
+	public Garantie(String animauxVivants, String frigo, String vehiculesEtRemorques, String citerne,
+			String typeContrat, String activite, String flotte, String typeCotisation, String typeMarchandise,
+			String expositions, String nombreExpositions, String iAC, String hIAC, String garantieVol, int capital,
+			int nombreDeSinistres, int franchiseToutCas, int franchiseParVehiculeRoulant, int cotisationParVehicule,
+			int cotisationParChiffreAffaire, String dateEffet , String dateFin) {
+		super();
+		this.animauxVivants = animauxVivants;
+		this.frigo = frigo;
+		this.vehiculesEtRemorques = vehiculesEtRemorques;
+		this.citerne = citerne;
+		this.typeContrat = typeContrat;
+		this.activite = activite;
+		this.flotte = flotte;
+		this.typeCotisation = typeCotisation;
+		this.typeMarchandise = typeMarchandise;
+		this.expositions = expositions;
+		this.nombreExpositions = nombreExpositions;
+		IAC = iAC;
+		HIAC = hIAC;
+		this.garantieVol = garantieVol;
+		this.capital = capital;
+		this.nombreDeSinistres = nombreDeSinistres;
+		this.franchiseToutCas = franchiseToutCas;
+		this.franchiseParVehiculeRoulant = franchiseParVehiculeRoulant;
+		this.cotisationParVehicule = cotisationParVehicule;
+		this.cotisationParChiffreAffaire = cotisationParChiffreAffaire;
+		this.dateEffet = dateEffet;
+		this.dateFin = dateFin;
+	}
+
 
 	public String getAnimauxVivants() {
 		return animauxVivants;

@@ -12,29 +12,27 @@
         <form action="/monProjet/ProjetTPPCServlet" method="post">
         
         <div class="input-field col s4">
+                  <span>Nom du client</span>
           <input name = "nomClient" id="nomClient" type="text" class="validate"  >
-          <label for="nomClient">
-          <span>Nom du client</span>
-          </label>
         </div>
         
         <div class="input-field col s4">
+                          <span>Adresse du client</span>
           <input name = "adresseClient" id="adresseClient" type="text" class="validate"  >
-          <label for="adresseClient">Adresse</label>
         </div>
       </div>
 
 <div class="row">
         <div class="input-field col s8 ">
+        <span>Numéro de contrat</span>
           <input name = "numeroContrat" id="numeroContrat" type="text" class="validate"  >
-          <label for="numeroContrat">Numéro de contrat </label>
         </div>
 </div>
 
 <div class="row">
         <div class="input-field col s8 ">
+                <span>Activité de l'assuré</span>
           <input id="activite" name = "activite" type="text" class="validate">
-          <label for="activite"> Activité de l'assuré</label>
         </div>
 </div>
 
@@ -148,13 +146,13 @@
       </label>
       </div>
       </div>
-      <div class = "row" id ="rowDateContratTemporaire" style = "display : none;">
-      	<div class="col s3">
-      	  <input type="date" name="dateDebut" class="datepicker">
+      <div class = "row" id ="rowDateContratTemporaire">
+      	<div class="col s3" id = "rowDateEffet" style = "display : block;" >
+      	  <input type="date" id ="dateEffet" name="dateEffet" class="datepicker" >
       	  <label>Date d'effet</label>
        </div>
-       <div class="col s3 offset-s1">
-       <input type="date" name="dateFin" class="datepicker">
+       <div class="col s3 offset-s1" id = "rowDateFin" style = "display : none;">
+       <input type="date" name="dateFin" id = "dateFin " class="datepicker" >
       	  <label>Date de fin</label>
        </div>
        		</div>
@@ -280,14 +278,16 @@
 	<div class="col s4">
 		<div class="row">
 			<label>
+			<span>Capital</span>
 			        <input id="capital" name = "capital" type="number" data-length="10"  >
-        			<span>Capital</span>
+        			
 			</label>
 		</div>
 		<div class="row">
 			<label>
+			<span>Nombre de sinistres</span>
 			            <input id="nombreDeSinistres" name = "nombreDeSinistres" type="number" data-length="10"  >
-        			<span>Nombre de sinistres</span>
+        			
 			</label>
 		</div>
 		
@@ -339,11 +339,11 @@ function toggleDateContrat() {
 	//alert("coucou");
 	if (document.getElementById("contratTemporaire").checked) 
 	{
-		 document.getElementById('rowDateContratTemporaire').style.display = 'block';
+		 document.getElementById('rowDateFin').style.display = 'block';
 	}
 	else
 	{
-		 document.getElementById('rowDateContratTemporaire').style.display = 'none';
+		 document.getElementById('rowDateFin').style.display = 'none';
 	}
 }
 

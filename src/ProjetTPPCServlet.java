@@ -65,15 +65,27 @@ public class ProjetTPPCServlet extends HttpServlet {
 		//int cotisationParVehicule = Integer.parseInt(request.getParameter("cotisationVehicule"));
 		int cotisationParChiffreAffaire = Integer.parseInt(request.getParameter("cotisationCA"));
 		int cotisationParVehicule = 0;
-
-
+		String dateEffet = request.getParameter("dateEffet"); 
+		Garantie garantie;
 		
-		Garantie garantie = new Garantie (animauxVivants,frigo,vehiculesEtRemorques,citerne,typeContrat,activite,flotte,typeCotisation,typeMarchandise,expositions,nombreExpositions,IAC,HIAC,garantieVol,capital,nombreDeSinistres,franchiseToutCas,franchiseParVehiculeRoulant,cotisationParVehicule,cotisationParChiffreAffaire);
+		if(typeContrat.equals("contratTemporaire"))
+		{
+			String dateFin  = request.getParameter("dateFin");
+			garantie = new Garantie (animauxVivants,frigo,vehiculesEtRemorques,citerne,typeContrat,activite,flotte,typeCotisation,typeMarchandise,expositions,nombreExpositions,IAC,HIAC,garantieVol,capital,nombreDeSinistres,franchiseToutCas,franchiseParVehiculeRoulant,cotisationParVehicule,cotisationParChiffreAffaire,dateEffet,dateFin);
+
+		}
+		else
+		{
+			garantie = new Garantie (animauxVivants,frigo,vehiculesEtRemorques,citerne,typeContrat,activite,flotte,typeCotisation,typeMarchandise,expositions,nombreExpositions,IAC,HIAC,garantieVol,capital,nombreDeSinistres,franchiseToutCas,franchiseParVehiculeRoulant,cotisationParVehicule,cotisationParChiffreAffaire,dateEffet);
+		}
 		System.out.println(garantie.toString());
 		try {
 			controler.HWPF.replaceAll(garantie);
 			this.getServletContext().getRequestDispatcher( "/Success.jsp" ).forward( request, response );
 		} catch (InvalidFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
